@@ -162,3 +162,4 @@ footer { text-align: center; padding: 80px 8%; border-top: 1px solid #1f242c; co
     .quick-stats { grid-template-columns: repeat(2, 1fr); }
     .sticky-nav { display: none; }
 }
+
