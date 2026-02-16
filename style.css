@@ -22,7 +22,9 @@
 #inter-cadet { --theme: #ab20fd; }
 #sports { --theme: #ff5500; }
 #national { --theme: #00ff9d; }
+#minor { --theme: #ffbb55dc; }
 #institutional { --theme: #ff0055; }
+#crs { --theme: #00c3ff; }
 #misc { --theme: #ff00cc; }
 #gallery { --theme: var(--neon); }
 
@@ -45,20 +47,19 @@ body {
 
 .header-container {
     display: flex;
-    flex-direction: row; /* Forces horizontal on PC and GitHub */
+    flex-direction: row;
     align-items: center;
     gap: 50px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* --- TECH FRAME V3 (STABILIZED) --- */
 .tech-frame-v3 {
     position: relative;
     width: 240px;
     height: 300px;
     padding: 10px;
-    flex-shrink: 0; /* Prevents GitHub from squishing the image */
+    flex-shrink: 0;
 }
 
 .scanner-bracket {
@@ -103,9 +104,7 @@ body {
 }
 @keyframes scan { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }
 
-/* --- BRANDING & STATS --- */
 .header-right { flex-grow: 1; }
-
 .name-title { 
     font-family: var(--font-heading); 
     font-size: 2.2rem; 
@@ -115,7 +114,6 @@ body {
 }
 
 .badge-row { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
-
 .status-prefect { 
     background: var(--house-blue); 
     color: #fff; 
@@ -125,7 +123,6 @@ body {
     letter-spacing: 1.5px;
     box-shadow: 0 0 15px rgba(0, 132, 255, 0.3);
 }
-
 .college-tag { 
     border: 1px solid var(--dim); 
     color: var(--dim); 
@@ -135,14 +132,12 @@ body {
     letter-spacing: 1px; 
 }
 
-/* --- QUICK STATS GRID --- */
 .quick-stats { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
     gap: 15px; 
     margin-top: 40px; 
 }
-
 .stat { 
     background: rgba(255, 255, 255, 0.03); 
     border: 1px solid rgba(255, 255, 255, 0.05); 
@@ -150,16 +145,13 @@ body {
     position: relative; 
     transition: 0.3s; 
 }
-
 .stat:hover { border-color: var(--neon); background: rgba(0, 242, 255, 0.05); }
-
 .stat-value { 
     display: block; 
     font-family: var(--font-heading); 
     font-size: 1.6rem; 
     color: #ffcc00; 
 }
-
 .stat-label { 
     display: block; 
     font-size: 0.65rem; 
@@ -167,15 +159,12 @@ body {
     color: var(--dim); 
     font-weight: 700; 
 }
-
 .stat-bar { 
     position: absolute; bottom: 0; left: 0; width: 20%; height: 2px; 
     background: var(--neon); transition: 0.4s; 
 }
-
 .stat:hover .stat-bar { width: 100%; }
 
-/* --- STICKY NAV --- */
 .sticky-nav {
     position: sticky; top: 0; background: rgba(5, 7, 10, 0.95); padding: 18px 5%; 
     border-bottom: 1px solid #1f242c; display: flex; justify-content: center; gap: 20px; 
@@ -187,17 +176,14 @@ body {
 }
 .sticky-nav a:hover { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
 
-/* --- SECTIONS & CONTENT --- */
 .content-wrapper { max-width: 1200px; margin: auto; padding: 40px 8%; }
 section { scroll-margin-top: 110px; margin-bottom: 80px; }
-
 .section-title { 
     font-family: var(--font-data); font-weight: 700; letter-spacing: 3px; color: var(--theme); 
     border-left: 5px solid var(--theme); padding-left: 20px; font-size: 1.4rem; 
     margin: 0 0 40px; text-transform: uppercase; 
 }
 
-/* --- VIDEO UI --- */
 .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 50px; }
 .video-proxy-card { position: relative; display: block; aspect-ratio: 16/9; background: #000; border: 1px solid #1f242c; overflow: hidden; }
 .proxy-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.4; transition: 0.5s; }
@@ -209,15 +195,54 @@ section { scroll-margin-top: 110px; margin-bottom: 80px; }
 .v-tag { font-size: 0.6rem; color: var(--neon); font-weight: 800; }
 .v-title { margin: 5px 0 0; font-family: var(--font-heading); font-size: 0.7rem; color: #fff; }
 
-/* --- DOCS PORTRAIT GRID --- */
 .doc-portrait-grid { display: flex; gap: 30px; flex-wrap: wrap; }
 .portrait-link { width: 200px; height: 280px; overflow: hidden; position: relative; display: block; border: 1px solid #1f242c; }
-.doc-thumbnail { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+.doc-thumbnail { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.5s; cursor: pointer; }
 .doc-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; }
 .portrait-link:hover .doc-overlay { opacity: 1; }
 .doc-overlay span { border: 1px solid #ffcc00; color: #ffcc00; padding: 6px 12px; font-size: 0.65rem; font-weight: 700; }
 .tech-label { color: var(--neon); font-size: 0.8rem; margin-bottom: 10px; text-transform: uppercase; }
 .doc-caption { font-size: 0.8rem; color: var(--dim); margin-top: 8px; }
+
+/* --- ENHANCED LOGO DISPLAY MODS --- */
+.logo-display-frame {
+    width: 200px;
+    height: 280px;
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    position: relative;
+    background: radial-gradient(circle at center, #111 0%, #000 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+}
+
+.logo-display-frame:hover {
+    border-color: var(--neon);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+.logo-display-frame .doc-thumbnail {
+    width: 80%; /* Shrink slightly inside the frame for better look */
+    height: auto;
+    max-height: 80%;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.logo-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.logo-display-frame:hover .logo-glow {
+    opacity: 1;
+}
 
 /* --- CERTIFICATE CARDS --- */
 .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
